@@ -1,31 +1,40 @@
-import { CardUser } from "./components/CardUser"
-import './global.css'
+import { Alien, User, Users } from "phosphor-react"
+import { CardUser } from "./components/CardUser/"
+import { Header } from "./components/Header"
 
+import './global.css'
 function App() {
   let users = [
     {
-      img: 'https://randomuser.me/api/portraits/men/10.jpg',
-      name: 'Philip Kim'
+      img: 'https://randomuser.me/api/portraits/women/66.jpg',
+      name: 'Cassandra Wilson',
+      id: 1
     },
     {
-      img: 'https://randomuser.me/api/portraits/men/4.jpg',
-      name: 'Miguel Caldwell'
+      img: 'https://randomuser.me/api/portraits/men/20.jpg',
+      name: 'Henry Dean',
+      id: 2
     },
     {
-      img: 'https://randomuser.me/api/portraits/women/40.jpg',
-      name: 'Heather Watts'
-    },
-    {
-      img: 'https://randomuser.me/api/portraits/women/37.jpg',
-      name: 'Leslie Alexander'
-    },
+      img: 'https://randomuser.me/api/portraits/women/29.jpg',
+      name: 'Nina Freeman',
+      id: 3
+    }
   ]
+
+  const cardUser: any[] = []
+  users.forEach(function (user) {
+    cardUser.push(
+      <div className="div" key={user.id}>
+        <CardUser user={user} textButton="Ver Perfil" />
+      </div>
+    )
+  })
+
   return (
-    <div className="App" >
-      <CardUser user={users[0]} />
-      <CardUser user={users[1]} />
-      <CardUser user={users[2]} />
-      <CardUser user={users[3]} />
+    <div className="App">
+      <Header title="Lista de Usuários" logo={<Users size={32} />} />
+      {cardUser}
     </div>
   )
 }
