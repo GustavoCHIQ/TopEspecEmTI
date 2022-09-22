@@ -1,13 +1,13 @@
-import { ButtonStyled } from './styled'
+import { ButtonStyle } from "./styled"
 
 type ButtonProps = {
-    text: string
+    text:string
 }
 
-export function Button({ text }: ButtonProps) {
+export function Button({text}:ButtonProps){
     return (
-        <ButtonStyled>
-            {text}
-        </ButtonStyled>
+       <ButtonStyle bg="#a82674">
+        {text}
+       </ButtonStyle>
     )
 }
