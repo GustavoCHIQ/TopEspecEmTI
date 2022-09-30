@@ -14,17 +14,13 @@ export function List() {
 
     useEffect(() => {
         setTimeout(listUser, 2000);
-
     }, [])
 
     console.log(users)
     return (
-
         <div>
             {isLoading ? <BeatLoader color="#c536d6" /> : ''}
-            {
-                users.map(user => <CardUser user={user} textButton="Ver Perfil" />)
-            }
+            {users.map(user => <CardUser user={user} textButton="Ver Perfil" />)}
         </div>
     )
 }
