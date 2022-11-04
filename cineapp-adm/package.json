@@ -1,5 +1,5 @@
 {
-  "name": "users-list",
+  "name": "cineapp-adm",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,22 +9,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@types/styled-components": "^5.1.26",
-    "axios": "^0.27.2",
-    "bootstrap": "^5.2.1",
-    "phosphor-react": "^1.4.1",
+    "@types/axios": "^0.14.0",
+    "axios": "^1.1.3",
+    "baseui": "^12.1.3",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.36.1",
-    "react-spinners": "^0.13.4",
-    "styled-components": "^5.3.5"
+    "react-loader-spinner": "^5.3.4",
+    "react-router-dom": "^6.4.3",
+    "styletron-engine-atomic": "^1.5.0",
+    "styletron-react": "^6.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.0.1",
+    "@vitejs/plugin-react": "^2.1.0",
     "typescript": "^4.6.4",
-    "vite": "^3.0.7"
+    "vite": "^3.1.0"
   }
 }
