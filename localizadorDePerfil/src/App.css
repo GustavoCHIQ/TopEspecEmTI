@@ -22,9 +22,9 @@
 }
 
 .container-app .container {
-  padding: 3rem;
+  padding: 7rem;
   width: 80%;
-  height: 80%; 
+  height: 80%;
 }
 
 .container-app .container .header-top ul {
@@ -73,6 +73,7 @@
   cursor: pointer;
   font-weight: 700;
   font-size: 1.2rem;
+  margin-left: 90px
 }
 
 .container-app .container main .form h1 {
@@ -117,4 +118,13 @@
   font-size: 20px;
   font-weight: 700;
   margin-top: 2rem;
+}
+
+.verPerfil {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+
 }
