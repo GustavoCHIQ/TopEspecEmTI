@@ -83,6 +83,15 @@
   margin-bottom: 2rem;
 }
 
+.error {
+  color: #FFF;
+  font-size: 1rem;
+  left: 50%;
+  position: absolute;
+  /* top: 50%;
+  transform: translate(-50%, -50%); */
+}
+
 .container-app .container main .content {
   display: flex;
 }
@@ -126,5 +135,13 @@
   font-size: 1.2rem;
   font-weight: 700;
   margin-top: 2rem;
+  background-color: #4c66dd;
+  padding: 10px 20px;
+  border-radius: 2rem;
 
+}
+
+/* criar um efeito de hover */
+.verPerfil:hover {
+  color: #000;
 }

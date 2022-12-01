@@ -17,6 +17,13 @@ function App() {
   const [perfil, setPerfil] = useState("/");
   const [avatarURL, setAvatarURL] = useState("./src/assets/avatar.png");
 
+  const [showElement, setShowElement] = useState(false)
+  const showDetails = () => setShowElement(true)
+
+  const [showElementError, setShowError] = useState(false)
+  const hideError = () => setShowError(false)
+
+
   useEffect(() => {
     setUserName("")
     setName("Aguardando...")
@@ -26,16 +33,28 @@ function App() {
 
 
   const handleSearch = () => {
+    setUserName("")
+    setName("Aguardando...")
+    setBio("Aguardando...")
     axios
       .get<GITHUBResponse>(`https://api.github.com/users/${userName}`)
       .then((res) => {
-        setName(res.data.name);
-        setBio(res.data.bio);
-        setAvatarURL(res.data.avatar_url);
-        setPerfil(res.data.html_url);
+        if (res.status === 200) {
+          setName(res.data.name);
+          setBio(res.data.bio);
+          setPerfil(res.data.html_url);
+          setAvatarURL(res.data.avatar_url);
+          showDetails()
+          hideError()
+        }
       })
       .catch((err) => {
-        console.log(err);
+        setName("Usuário não encontrado");
+        setBio("Usuário não encontrado");
+        setPerfil("#");
+        setAvatarURL("./src/assets/avatar.png");
+        showDetails()
+
       });
   };
 
@@ -56,10 +75,14 @@ function App() {
           </div>
           <div className="content">
             <div>
-              <img src={avatarURL} alt="avatar" />
-              <h1>{name}</h1>
+              {showElement ? <img src={avatarURL} alt="avatar" /> : null}
+              {showElement ? <h1>{name}</h1> : null}
+              {showElement ? <p>{bio}</p> : null}
+              {showElement ? <a className="verPerfil" href={perfil}>Acessar Perfil</a> : null}
+              {/* <img src={avatarURL} alt="avatar" /> */}
+              {/* <h1>{name}</h1>
               <p>{bio}</p>
-              <a className="verPerfil" href={perfil} >Ver perfil</a>
+              <a className="verPerfil" href={perfil} >Ver perfil</a> */}
             </div>
           </div>
         </main>
